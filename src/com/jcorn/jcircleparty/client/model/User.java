@@ -1,5 +1,6 @@
 package com.jcorn.jcircleparty.client.model;
 
+import com.jcorn.jcircleparty.helper.Settings;
 import java.awt.Color;
 
 /**
@@ -15,13 +16,20 @@ public class User {
     private String email;
     private String username;
     
+    //Color --> Circle
     private Color color;
     
     private long highscore;
     private int playtime;
     
     public static boolean login(String username, String password) {
+        Settings.setIsLogin(true);
         return true;
+    }
+    
+    public static User getUser(String username, String password) {
+        //Get User from Server
+        return new User("Unknown", "test@mail.com", username, Color.yellow);
     }
 
     public User(String name, String email, String username, Color color) {

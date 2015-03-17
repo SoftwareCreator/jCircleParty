@@ -19,7 +19,6 @@ public class ClientMainView extends javax.swing.JFrame {
 
     public ClientMainView() {
         initComponents();
-        checkLogin();
         initClasses();
         initLabels();
     }
@@ -31,8 +30,11 @@ public class ClientMainView extends javax.swing.JFrame {
     }
 
     private void showLogin() {
+        //Quit Server Connection
+        //Syncronize with Server
+
         this.setVisible(false);
-        
+
         this.user = null;
         Settings.setIsLogin(false);
 
@@ -104,6 +106,16 @@ public class ClientMainView extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(949, 700));
         setResizable(false);
         setSize(new java.awt.Dimension(949, 700));
+        addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                onFocuesGainedFrame(evt);
+            }
+        });
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                onMouseEnteredFrame(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         pnTitle.setBackground(new java.awt.Color(41, 128, 185));
@@ -292,7 +304,7 @@ public class ClientMainView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void onProfileLogout(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onProfileLogout
-        profileLogout();
+        showLogin();
     }//GEN-LAST:event_onProfileLogout
 
     private void onQuit(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onQuit
@@ -319,9 +331,13 @@ public class ClientMainView extends javax.swing.JFrame {
         pnPartyRoom.requestFocus();
     }//GEN-LAST:event_onMouseEnteredPartyRoom
 
-    private void profileLogout() {
+    private void onMouseEnteredFrame(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_onMouseEnteredFrame
+        checkLogin();
+    }//GEN-LAST:event_onMouseEnteredFrame
 
-    }
+    private void onFocuesGainedFrame(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_onFocuesGainedFrame
+        checkLogin();
+    }//GEN-LAST:event_onFocuesGainedFrame
 
     private void quit() {
         if (JOptionPane.showConfirmDialog(this, "Do you really want to quit?", "Quit?", JOptionPane.YES_NO_CANCEL_OPTION) == JOptionPane.YES_OPTION) {
