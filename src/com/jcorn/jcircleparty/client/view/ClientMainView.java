@@ -3,6 +3,8 @@ package com.jcorn.jcircleparty.client.view;
 import com.jcorn.jcircleparty.client.model.User;
 import com.jcorn.jcircleparty.helper.Settings;
 import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,7 +21,11 @@ public class ClientMainView extends javax.swing.JFrame {
 
     public ClientMainView() {
         initComponents();
-        initClasses();
+        try {
+            initClasses();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getLocalizedMessage());
+        }
         initLabels();
     }
 
@@ -42,8 +48,8 @@ public class ClientMainView extends javax.swing.JFrame {
         login.setVisible(true);
     }
 
-    private void initClasses() {
-        this.user = new User("Not defined", "not.defined@mail.com", "not_defined", Color.white);
+    private void initClasses() throws Exception {
+        this.user = new User("Not defined", "notdefined@mail.com", "not_defined", Color.white);
     }
 
     private void initLabels() {

@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 /**
  * jCircleParty
- * 
+ *
  * @author Markus Petritz
  * @version 1.0.0
  * @see http://petritzdesigns.at
@@ -16,22 +16,22 @@ import javax.swing.JOptionPane;
 public class LoginView extends javax.swing.JFrame {
 
     private final ClientMainView main;
-    
+
     public LoginView(ClientMainView main) {
         initComponents();
         initLabels();
         this.main = main;
     }
-    
+
     private void initLabels() {
         lbTitle.setText(Settings.getTitle());
         lbCopyright.setText(Settings.getCopyright());
     }
-    
+
     public void setUsername(String username) {
         tfUsername.setText(username);
     }
-    
+
     private void showRegister() {
         this.setVisible(false);
 
@@ -176,21 +176,25 @@ public class LoginView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void onLogin(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onLogin
-        String username = tfUsername.getText();
-        String password = Arrays.toString(tfPassword.getPassword());
-        
-        if(User.login(username, password)) {
-            User user = User.getUser(username, password);
-            ThatsYouView you = new ThatsYouView(user);
-            
-            main.setUser(user);
-            main.setVisible(true);
-            
-            you.setVisible(true);
-            
-            this.dispose();
-        } else {
-            JOptionPane.showMessageDialog(this, "You entered a wrong username or password!");
+        try {
+            String username = tfUsername.getText();
+            String password = Arrays.toString(tfPassword.getPassword());
+
+            if (User.login(username, password)) {
+                User user = User.getUserFromServer(username, password);
+                ThatsYouView you = new ThatsYouView(user);
+
+                main.setUser(user);
+                main.setVisible(true);
+
+                you.setVisible(true);
+
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "You entered a wrong username or password!");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }//GEN-LAST:event_onLogin
 

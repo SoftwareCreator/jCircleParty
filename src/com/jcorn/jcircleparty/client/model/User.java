@@ -2,52 +2,62 @@ package com.jcorn.jcircleparty.client.model;
 
 import com.jcorn.jcircleparty.helper.Settings;
 import java.awt.Color;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * jCircleParty
- * 
+ *
  * @author Markus Petritz
  * @version 1.0.0
  * @see http://petritzdesigns.at
  */
 public class User {
-    
+
     private String name;
     private String email;
     private String username;
-    
+
     //Color --> Circle
     private Color color;
-    
+
     private long highscore;
     private int playtime;
-    
-    public static boolean login(String username, String password) {
-        Settings.setIsLogin(true);
-        return true;
-    }
-    
-    public static User getUser(String username, String password) {
-        //Get User from Server
-        return new User("Unknown", "test@mail.com", username, Color.yellow);
-    }
 
-    public User(String name, String email, String username, Color color) {
-        /*
-        TODO:
-        Plausiprüfung
-        
-        name --> <First name> <Last name> (Space is important!)
-        email --> min. 1x "@", .com/.net/.at/usw 
-        username --> no @ at beginning, usw...
-        
-        */
+    public User(String name, String email, String username, Color color) throws Exception {
+        Pattern pattern = Pattern.compile("\\s");
+        Matcher matcher = pattern.matcher(name);
+        boolean nameHasSpace = matcher.find();
+
+        if (!nameHasSpace) {
+            throw new Exception("The name must have an empty space in it");
+        }
+
+        System.out.println(email.contains("."));
+        if (!email.contains("@") || !email.contains(".")) {
+            throw new Exception("The email is invalid");
+        }
+
+        if (username.startsWith("@")) {
+            throw new Exception("The username must not start with an @ sign");
+        }
+
         this.name = name;
         this.email = email;
         this.username = username;
         this.color = color;
         this.highscore = 0;
         this.playtime = 0;
+    }
+
+    public static boolean login(String username, String password) {
+        Settings.setIsLogin(true);
+        return true;
+    }
+
+    public static User getUserFromServer(String username, String password) throws Exception {
+        //Get User from Server
+        return new User("Unknown Man", "test@mail.com", username, Color.yellow);
     }
 
     public User(String name, String email, String username, Color color, long highscore, int playtime) {
