@@ -19,8 +19,25 @@ public class ClientMainView extends javax.swing.JFrame {
 
     public ClientMainView() {
         initComponents();
+        checkLogin();
         initClasses();
         initLabels();
+    }
+
+    private void checkLogin() {
+        if (!Settings.isLogin()) {
+            showLogin();
+        }
+    }
+
+    private void showLogin() {
+        this.setVisible(false);
+        
+        this.user = null;
+        Settings.setIsLogin(false);
+
+        LoginView login = new LoginView(this);
+        login.setVisible(true);
     }
 
     private void initClasses() {
@@ -220,6 +237,11 @@ public class ClientMainView extends javax.swing.JFrame {
         pnPartyRoom.setBackground(new java.awt.Color(189, 195, 199));
         pnPartyRoom.setPreferredSize(new java.awt.Dimension(500, 500));
         pnPartyRoom.setSize(new java.awt.Dimension(500, 500));
+        pnPartyRoom.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                onMouseEnteredPartyRoom(evt);
+            }
+        });
         getContentPane().add(pnPartyRoom);
         pnPartyRoom.setBounds(450, 120, 500, 500);
 
@@ -286,12 +308,16 @@ public class ClientMainView extends javax.swing.JFrame {
     }//GEN-LAST:event_onStart
 
     private void onReset(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onReset
-        gameReset();
+        resetGame();
     }//GEN-LAST:event_onReset
 
     private void onRandom(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onRandom
-       gameRandom();
+        gameRandom();
     }//GEN-LAST:event_onRandom
+
+    private void onMouseEnteredPartyRoom(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_onMouseEnteredPartyRoom
+        pnPartyRoom.requestFocus();
+    }//GEN-LAST:event_onMouseEnteredPartyRoom
 
     private void profileLogout() {
 
@@ -315,12 +341,8 @@ public class ClientMainView extends javax.swing.JFrame {
 
     }
 
-    private void gameReset() {
-        resetGame();
-    }
-    
     private void gameRandom() {
-        
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

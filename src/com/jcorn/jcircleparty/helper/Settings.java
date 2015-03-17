@@ -10,6 +10,7 @@ package com.jcorn.jcircleparty.helper;
 public class Settings {
 
     public final static boolean isDebug = true;
+    public static boolean isLogin = false;
     
     private final static String title = "jCircleParty";
     private final static String version = "1.0.0";
@@ -25,5 +26,13 @@ public class Settings {
 
     public static String getCopyright() {
         return copyright;
+    }
+
+    public static boolean isLogin() {
+        return isLogin;
+    }
+
+    public static void setIsLogin(boolean isLogin) {
+        Settings.isLogin = isLogin;
     }
 }
