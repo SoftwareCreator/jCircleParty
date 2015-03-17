@@ -33,6 +33,15 @@ public class User {
     }
 
     public User(String name, String email, String username, Color color) {
+        /*
+        TODO:
+        Plausiprüfung
+        
+        name --> <First name> <Last name> (Space is important!)
+        email --> min. 1x "@", .com/.net/.at/usw 
+        username --> no @ at beginning, usw...
+        
+        */
         this.name = name;
         this.email = email;
         this.username = username;
