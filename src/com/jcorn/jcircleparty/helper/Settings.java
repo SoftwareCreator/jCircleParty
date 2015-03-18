@@ -15,6 +15,9 @@ public class Settings {
     private final static String title = "jCircleParty";
     private final static String version = "1.0.0";
     private final static String copyright = "Copyright (c) jCorn Development";
+    
+    private final static String host = "localhost";
+    private final static int port = 25001;
 
     public static String getTitle() {
         return title;
@@ -34,5 +37,13 @@ public class Settings {
 
     public static void setIsLogin(boolean isLogin) {
         Settings.isLogin = isLogin;
+    }
+
+    public static String getHost() {
+        return host;
+    }
+
+    public static int getPort() {
+        return port;
     }
 }

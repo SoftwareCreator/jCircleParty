@@ -1,5 +1,6 @@
 package com.jcorn.jcircleparty.client.model;
 
+import com.jcorn.jcircleparty.client.controller.ClientNetworkController;
 import com.jcorn.jcircleparty.helper.Settings;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -60,12 +61,11 @@ public class User {
 
     public static boolean login(String username, String password) {
         Settings.setIsLogin(true);
-        return true;
+        return ClientNetworkController.getInstance().login(username, password);
     }
 
     public static User getUserFromServer(String username, String password) throws Exception {
-        //Get User from Server
-        return new User("Unknown Man", "test@mail.com", username, new Circle());
+        return ClientNetworkController.getInstance().getUser(username, password);
     }
 
     public String getName() {

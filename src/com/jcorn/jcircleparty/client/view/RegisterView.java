@@ -12,7 +12,7 @@ import com.jcorn.jcircleparty.helper.Settings;
  */
 public class RegisterView extends javax.swing.JFrame {
 
-    private LoginView login;
+    private final LoginView login;
     
     public RegisterView(LoginView login) {
         initComponents();
@@ -104,7 +104,7 @@ public class RegisterView extends javax.swing.JFrame {
 
         pnFooter.setBackground(new java.awt.Color(41, 128, 185));
         pnFooter.setFocusable(false);
-        pnFooter.setLayout(new java.awt.GridLayout());
+        pnFooter.setLayout(new java.awt.GridLayout(1, 0));
 
         lbCopyright.setForeground(new java.awt.Color(255, 255, 255));
         lbCopyright.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
