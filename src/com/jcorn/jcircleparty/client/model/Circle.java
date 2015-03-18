@@ -1,5 +1,6 @@
 package com.jcorn.jcircleparty.client.model;
 
+import com.jcorn.jcircleparty.client.helper.SymbolEnum;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.Random;
@@ -16,12 +17,14 @@ public class Circle {
 
     private int x, y, radius;
     private final Color color;
+    private final Symbol symbol;
 
-    public Circle(int x, int y, int radius, Color color) {
+    public Circle(int x, int y, int radius, Color color, Symbol symbol) {
         this.x = x;
         this.y = y;
         this.radius = radius;
         this.color = color;
+        this.symbol = symbol;
     }
 
     public Circle() {
@@ -30,6 +33,7 @@ public class Circle {
         this.y = 0;
         this.radius = 100;
         this.color = Circle.randomColor();
+        this.symbol = Circle.randomSymbol();
     }
 
     public void setPosition(int x, int y) {
@@ -52,5 +56,10 @@ public class Circle {
         final float saturation = 0.9f;
         final float luminance = 1.0f;
         return Color.getHSBColor(hue, saturation, luminance);
+    }
+    
+    public static Symbol randomSymbol() {
+        Random random = new Random();
+        return new Symbol(SymbolEnum.values()[random.nextInt(SymbolEnum.values().length)]);
     }
 }
