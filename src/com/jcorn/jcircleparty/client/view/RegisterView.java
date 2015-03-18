@@ -1,6 +1,9 @@
 package com.jcorn.jcircleparty.client.view;
 
+import com.jcorn.jcircleparty.helper.JC;
 import com.jcorn.jcircleparty.helper.Settings;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
 
 /**
  * jCircleParty
@@ -225,15 +228,26 @@ public class RegisterView extends javax.swing.JFrame {
     }//GEN-LAST:event_onBack
 
     private void onRegister(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onRegister
-        //Test only!
-        login.setUsername("Registered");
-        
-        /*
-        TODO:
-        Get all Elements and create User Element --> call store function
-        and return to login view
-        */
-        
+        try
+        {
+            String password = Arrays.toString(tfPassword.getPassword());
+            String passwordAgain = Arrays.toString(tfPasswordAgain.getPassword());
+            if(!password.equals(passwordAgain))
+            {
+                JOptionPane.showMessageDialog(this, "Please Enter the second password correctly!");
+                tfPasswordAgain.setText("");
+            }
+            String name = tfName.getText();
+            String eMail = tfEmail.getText();
+            String username = tfUsername.getText();
+            //needs to be finished
+//            User user = new User(name, username, eMail, );
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+            JC.debug(e);
+        }
         back();
     }//GEN-LAST:event_onRegister
 
