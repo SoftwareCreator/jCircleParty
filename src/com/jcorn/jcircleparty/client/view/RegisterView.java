@@ -234,7 +234,7 @@ public class RegisterView extends javax.swing.JFrame {
             String passwordAgain = Arrays.toString(tfPasswordAgain.getPassword());
             if(!password.equals(passwordAgain))
             {
-                JOptionPane.showMessageDialog(this, "Please Enter the second password correctly!");
+                JOptionPane.showMessageDialog(this, "Please enter the second password correctly!");
                 tfPasswordAgain.setText("");
             }
             String name = tfName.getText();
