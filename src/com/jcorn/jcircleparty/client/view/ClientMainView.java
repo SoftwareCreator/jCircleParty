@@ -1,8 +1,8 @@
 package com.jcorn.jcircleparty.client.view;
 
+import com.jcorn.jcircleparty.client.model.Circle;
 import com.jcorn.jcircleparty.client.model.User;
 import com.jcorn.jcircleparty.helper.Settings;
-import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -47,7 +47,7 @@ public class ClientMainView extends javax.swing.JFrame {
     }
 
     private void initClasses() throws Exception {
-        this.user = new User("Not defined", "notdefined@mail.com", "not_defined", Color.white);
+        this.user = new User("Not defined", "notdefined@mail.com", "not_defined", new Circle());
     }
 
     private void initLabels() {

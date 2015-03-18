@@ -1,7 +1,6 @@
 package com.jcorn.jcircleparty.client.model;
 
 import com.jcorn.jcircleparty.helper.Settings;
-import java.awt.Color;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,13 +18,12 @@ public class User {
     private String email;
     private String username;
 
-    //Color --> Circle
-    private Color color;
+    private Circle circle;
 
     private long highscore;
     private int playtime;
 
-    public User(String name, String email, String username, Color color) throws Exception {
+    public User(String name, String email, String username, Circle circle) throws Exception {
         Pattern patternName = Pattern.compile("\\s");
         Matcher matcherName = patternName.matcher(name);
         boolean nameHasSpace = matcherName.find();
@@ -55,7 +53,7 @@ public class User {
         this.name = name;
         this.email = email;
         this.username = username;
-        this.color = color;
+        this.circle = circle;
         this.highscore = 0;
         this.playtime = 0;
     }
@@ -67,16 +65,7 @@ public class User {
 
     public static User getUserFromServer(String username, String password) throws Exception {
         //Get User from Server
-        return new User("Unknown Man", "test@mail.com", username, Color.yellow);
-    }
-
-    public User(String name, String email, String username, Color color, long highscore, int playtime) {
-        this.name = name;
-        this.email = email;
-        this.username = username;
-        this.color = color;
-        this.highscore = highscore;
-        this.playtime = playtime;
+        return new User("Unknown Man", "test@mail.com", username, new Circle());
     }
 
     public String getName() {
@@ -103,12 +92,12 @@ public class User {
         this.username = username;
     }
 
-    public Color getColor() {
-        return color;
+    public Circle getCircle() {
+        return circle;
     }
 
-    public void setColor(Color color) {
-        this.color = color;
+    public void setCircle(Circle circle) {
+        this.circle = circle;
     }
 
     public long getHighscore() {
