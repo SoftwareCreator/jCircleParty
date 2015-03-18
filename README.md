@@ -2,5 +2,6 @@
 A 2d Java Networking Game with Circles.
 
 ##Members
-* Markus Petritz
-* Julian Maierl
+* Markus Petritz (@petritzdesigns)
+* Julian Maierl  (@SComputerLP)
+* Jakob Meinhart (@SoftwareCreator)
