@@ -51,6 +51,8 @@ public class ClientMainView extends javax.swing.JFrame {
     }
 
     private void initLabels() {
+        setLocationRelativeTo(null);
+        
         lbTitle.setText(Settings.getTitle());
         lbVersion.setText(String.format("Version %s", Settings.getVersion()));
         lbCopyright.setText(Settings.getCopyright());
@@ -105,11 +107,8 @@ public class ClientMainView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("jCircleParty");
         setFocusable(false);
-        setMaximumSize(new java.awt.Dimension(949, 700));
         setMinimumSize(new java.awt.Dimension(949, 700));
-        setPreferredSize(new java.awt.Dimension(949, 700));
         setResizable(false);
-        setSize(new java.awt.Dimension(949, 700));
         addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 onFocuesGainedFrame(evt);
@@ -118,6 +117,11 @@ public class ClientMainView extends javax.swing.JFrame {
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 onMouseEnteredFrame(evt);
+            }
+        });
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                onOpenFrame(evt);
             }
         });
         getContentPane().setLayout(null);
@@ -342,6 +346,10 @@ public class ClientMainView extends javax.swing.JFrame {
     private void onFocuesGainedFrame(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_onFocuesGainedFrame
         checkLogin();
     }//GEN-LAST:event_onFocuesGainedFrame
+
+    private void onOpenFrame(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_onOpenFrame
+        checkLogin();
+    }//GEN-LAST:event_onOpenFrame
 
     private void quit() {
         if (JOptionPane.showConfirmDialog(this, "Do you really want to quit?", "Quit?", JOptionPane.YES_NO_CANCEL_OPTION) == JOptionPane.YES_OPTION) {

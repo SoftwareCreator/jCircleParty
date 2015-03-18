@@ -25,6 +25,8 @@ public class LoginView extends javax.swing.JFrame {
     }
 
     private void initLabels() {
+        setLocationRelativeTo(main);
+        
         lbTitle.setText(Settings.getTitle());
         lbCopyright.setText(Settings.getCopyright());
     }

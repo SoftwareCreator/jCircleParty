@@ -21,6 +21,8 @@ public class RegisterView extends javax.swing.JFrame {
     }
     
     private void initLabels() {
+        setLocationRelativeTo(login);
+        
         lbTitle.setText(Settings.getTitle());
         lbCopyright.setText(Settings.getCopyright());
     }

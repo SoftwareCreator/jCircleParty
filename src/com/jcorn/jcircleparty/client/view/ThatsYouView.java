@@ -16,6 +16,7 @@ public class ThatsYouView extends javax.swing.JFrame {
     
     public ThatsYouView(User user) {
         initComponents();
+        setLocationRelativeTo(null);
         this.user = user;
     }
 
