@@ -41,13 +41,15 @@ public class Symbol {
     public void draw(Graphics2D g2d) {
         g2d.setColor(color);
         
+        //TODO:
+        //Rectangle, Triangle zeichnen. Mit vorgegeben x, y und size Werten.
+        
         switch (type) {
             case RECTANGLE:
                 break;
             case TRIANGLE:
                 break;
             case CIRCLE:
-                break;
             default:
                 g2d.fillOval(x, y, size, size);
                 break;
