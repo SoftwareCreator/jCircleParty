@@ -14,9 +14,7 @@ public enum SymbolEnum {
     HIPSTER_TRIANGLE,
     OVAL,
     RECTANGLE,
-    SMILEY,
     CIRCLE,
     HEXAGON,
-    RAUTE
-    //Raute soll eher wie so ein diamant ausschauen oder halt wie so zwei schmale gleichschenkelige dreiecke auf einander
+    DIAMOND,
 }

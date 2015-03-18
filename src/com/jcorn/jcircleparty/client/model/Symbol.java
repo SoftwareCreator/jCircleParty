@@ -45,15 +45,24 @@ public class Symbol {
 
     public void draw(Graphics2D g2d) {
         g2d.setColor(color);
-                
+
         switch (type) {
             case SQUARE:
                 g2d.fillRect(x, y, size, size);
                 break;
-            case OVAL:
-                g2d.fillOval(x + 30 , y, size - 100, size);
-                break;
             case TRIANGLE:
+                break;
+            case HIPSTER_TRIANGLE:
+                break;
+            case OVAL:
+                g2d.fillOval(x + 30, y, size - 100, size);
+                break;
+            case RECTANGLE:
+                g2d.fillRect(x, y + 10, size, size - 20);
+                break;
+            case HEXAGON:
+                break;
+            case DIAMOND:
                 break;
             case CIRCLE:
             default:
