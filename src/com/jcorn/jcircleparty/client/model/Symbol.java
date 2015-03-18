@@ -43,6 +43,22 @@ public class Symbol {
         return type;
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
     public void draw(Graphics2D g2d) {
         g2d.setColor(color);
 

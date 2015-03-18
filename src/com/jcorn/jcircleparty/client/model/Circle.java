@@ -58,6 +58,26 @@ public class Circle {
         symbol.draw(g2d);
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public int getRadius() {
+        return radius;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public Symbol getSymbol() {
+        return symbol;
+    }
+
     public static Color randomColor() {
         Random random = new Random();
         final float hue = random.nextFloat();

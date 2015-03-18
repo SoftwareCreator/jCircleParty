@@ -7,7 +7,7 @@ import java.awt.Graphics2D;
 
 /**
  * jCircleParty
- * 
+ *
  * @author Markus Petritz
  * @author Julian Maierl
  * @author Jakob Meinhart
@@ -15,7 +15,7 @@ import java.awt.Graphics2D;
  * @see http://petritzdesigns.at
  */
 public class ThatsYouView extends javax.swing.JFrame {
-
+    
     private final User user;
     
     public ThatsYouView(User user) {
@@ -28,12 +28,13 @@ public class ThatsYouView extends javax.swing.JFrame {
     
     private void init() {
         setLocationRelativeTo(null);
+        System.out.println(String.format("Circle: %s, Symbol: %s", user.getCircle().getColor(), user.getCircle().getSymbol().getType()));
     }
     
     private void draw() {
         paint(pnCircle.getGraphics());
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -118,7 +119,7 @@ public class ThatsYouView extends javax.swing.JFrame {
     private void onOk(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onOk
         this.dispose();
     }//GEN-LAST:event_onOk
-
+    
     @Override
     public void paint(Graphics grphcs) {
         super.paint(grphcs);
@@ -134,7 +135,7 @@ public class ThatsYouView extends javax.swing.JFrame {
         
         user.getCircle().draw(g2d);
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btOk;
     private javax.swing.JLabel lbCopyright;
