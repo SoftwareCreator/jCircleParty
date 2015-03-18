@@ -36,8 +36,7 @@ public class ThatsYouView extends javax.swing.JFrame {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
         pnTitle = new javax.swing.JPanel();
@@ -48,7 +47,7 @@ public class ThatsYouView extends javax.swing.JFrame {
         pnMain = new javax.swing.JPanel();
         pnCircle = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("jCircleParty - Thats You!");
         setMinimumSize(new java.awt.Dimension(330, 413));
         setResizable(false);
@@ -71,10 +70,8 @@ public class ThatsYouView extends javax.swing.JFrame {
         pnTitle.add(lbTitle, gridBagConstraints);
 
         btOk.setText("OK");
-        btOk.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 onOk(evt);
             }
         });

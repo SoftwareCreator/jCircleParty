@@ -39,6 +39,10 @@ public class Symbol {
         this.color = color;
     }
 
+    public SymbolEnum getType() {
+        return type;
+    }
+
     public void draw(Graphics2D g2d) {
         g2d.setColor(color);
                 
