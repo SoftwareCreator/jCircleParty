@@ -7,8 +7,9 @@ import java.util.regex.Pattern;
 
 /**
  * jCircleParty
- *
+ * 
  * @author Markus Petritz
+ * @author Julian Maierl
  * @version 1.0.0
  * @see http://petritzdesigns.at
  */
@@ -25,19 +26,28 @@ public class User {
     private int playtime;
 
     public User(String name, String email, String username, Color color) throws Exception {
-        Pattern pattern = Pattern.compile("\\s");
-        Matcher matcher = pattern.matcher(name);
-        boolean nameHasSpace = matcher.find();
+        Pattern patternName = Pattern.compile("\\s");
+        Matcher matcherName = patternName.matcher(name);
+        boolean nameHasSpace = matcherName.find();
 
         if (!nameHasSpace) {
-            throw new Exception("The name must have an empty space in it");
+            throw new Exception("The name must look like this: <First Name> <Last Name>. There must be an space between!");
         }
 
-        System.out.println(email.contains("."));
-        if (!email.contains("@") || !email.contains(".")) {
-            throw new Exception("The email is invalid");
+        Pattern patternEmail = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        Matcher matcherEmail = patternEmail.matcher(email);
+        boolean emailIsValid = matcherEmail.find();
+
+        if (!emailIsValid) {
+            throw new Exception("The email you intered is not valid.");
         }
 
+//        Not good! Use Regex instead.
+//        System.out.println(email.contains("."));
+//        if (!email.contains("@") || !email.contains(".")) {
+//            throw new Exception("The email is invalid");
+//        }
+        
         if (username.startsWith("@")) {
             throw new Exception("The username must not start with an @ sign");
         }

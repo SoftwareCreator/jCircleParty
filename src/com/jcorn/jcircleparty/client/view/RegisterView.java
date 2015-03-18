@@ -6,6 +6,7 @@ import com.jcorn.jcircleparty.helper.Settings;
  * jCircleParty
  * 
  * @author Markus Petritz
+ * @author Julian Maierl
  * @version 1.0.0
  * @see http://petritzdesigns.at
  */

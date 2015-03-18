@@ -3,8 +3,6 @@ package com.jcorn.jcircleparty.client.view;
 import com.jcorn.jcircleparty.client.model.User;
 import com.jcorn.jcircleparty.helper.Settings;
 import java.awt.Color;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**

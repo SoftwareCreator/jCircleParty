@@ -8,8 +8,9 @@ import javax.swing.JOptionPane;
 
 /**
  * jCircleParty
- *
+ * 
  * @author Markus Petritz
+ * @author Julian Maierl
  * @version 1.0.0
  * @see http://petritzdesigns.at
  */
