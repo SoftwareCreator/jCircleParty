@@ -7,6 +7,7 @@ import com.jcorn.jcircleparty.helper.Settings;
  * 
  * @author Markus Petritz
  * @author Julian Maierl
+ * @author Jakob Meinhart
  * @version 1.0.0
  * @see http://petritzdesigns.at
  */
@@ -34,7 +35,8 @@ public class RegisterView extends javax.swing.JFrame {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
         java.awt.GridBagConstraints gridBagConstraints;
 
         pnTitle = new javax.swing.JPanel();
@@ -90,8 +92,10 @@ public class RegisterView extends javax.swing.JFrame {
         pnTitle.add(lbInfo, gridBagConstraints);
 
         btBack.setText("back");
-        btBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btBack.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 onBack(evt);
             }
         });
@@ -197,8 +201,10 @@ public class RegisterView extends javax.swing.JFrame {
         pnMain.add(tfPasswordAgain, gridBagConstraints);
 
         btRegister.setText("Register");
-        btRegister.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btRegister.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 onRegister(evt);
             }
         });

@@ -10,12 +10,13 @@ import java.awt.Graphics2D;
  * 
  * @author Markus Petritz
  * @author Julian Maierl
+ * @author Jakob Meinhart
  * @version 1.0.0
  * @see http://petritzdesigns.at
  */
 public class ThatsYouView extends javax.swing.JFrame {
 
-    private User user;
+    private final User user;
     
     public ThatsYouView(User user) {
         this.user = user;

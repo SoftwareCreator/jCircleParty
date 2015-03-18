@@ -41,11 +41,6 @@ public class User {
             throw new Exception("The email you intered is not valid.");
         }
 
-//        Not good! Use Regex instead.
-//        System.out.println(email.contains("."));
-//        if (!email.contains("@") || !email.contains(".")) {
-//            throw new Exception("The email is invalid");
-//        }
         if (username.startsWith("@")) {
             throw new Exception("The username must not start with an @ sign");
         }
