@@ -1,5 +1,8 @@
 package com.jcorn.jcircleparty.client.model;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
+
 /**
  * jCircleParty
  * 
@@ -9,4 +12,8 @@ package com.jcorn.jcircleparty.client.model;
  */
 public class Circle {
     
+    public void draw(int x, int y, int size, Graphics2D g2d) {
+        g2d.setColor(Color.red);
+        g2d.drawOval(x, y, size, size);
+    }
 }

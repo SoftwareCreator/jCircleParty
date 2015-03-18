@@ -1,6 +1,8 @@
 package com.jcorn.jcircleparty.client.view;
 
 import com.jcorn.jcircleparty.client.model.User;
+import java.awt.Color;
+import java.awt.Graphics2D;
 
 /**
  * jCircleParty
@@ -12,12 +14,25 @@ import com.jcorn.jcircleparty.client.model.User;
  */
 public class ThatsYouView extends javax.swing.JFrame {
 
-    private final User user;
+    private User user;
     
     public ThatsYouView(User user) {
-        initComponents();
-        setLocationRelativeTo(null);
         this.user = user;
+        
+        initComponents();
+        init();
+        draw();
+    }
+    
+    private void init() {
+        setLocationRelativeTo(null);
+    }
+    
+    private void draw() {
+        Graphics2D g2d = (Graphics2D) pnCircle.getGraphics();
+        g2d.setBackground(new Color(238, 238, 238));
+        //customize the parameters for this method! (x, y, size)
+        user.getCircle().draw(0, 0, 500, g2d);
     }
 
     @SuppressWarnings("unchecked")
@@ -35,11 +50,8 @@ public class ThatsYouView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("jCircleParty - Thats You!");
-        setMaximumSize(new java.awt.Dimension(330, 413));
         setMinimumSize(new java.awt.Dimension(330, 413));
-        setPreferredSize(new java.awt.Dimension(330, 413));
         setResizable(false);
-        setSize(new java.awt.Dimension(330, 413));
 
         pnTitle.setBackground(new java.awt.Color(41, 128, 185));
         pnTitle.setFocusable(false);
@@ -73,7 +85,7 @@ public class ThatsYouView extends javax.swing.JFrame {
 
         pnFooter.setBackground(new java.awt.Color(41, 128, 185));
         pnFooter.setFocusable(false);
-        pnFooter.setLayout(new java.awt.GridLayout());
+        pnFooter.setLayout(new java.awt.GridLayout(1, 0));
 
         lbCopyright.setForeground(new java.awt.Color(255, 255, 255));
         lbCopyright.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -85,7 +97,6 @@ public class ThatsYouView extends javax.swing.JFrame {
         pnMain.setLayout(new java.awt.GridBagLayout());
 
         pnCircle.setPreferredSize(new java.awt.Dimension(300, 300));
-        pnCircle.setSize(new java.awt.Dimension(300, 300));
 
         javax.swing.GroupLayout pnCircleLayout = new javax.swing.GroupLayout(pnCircle);
         pnCircle.setLayout(pnCircleLayout);
