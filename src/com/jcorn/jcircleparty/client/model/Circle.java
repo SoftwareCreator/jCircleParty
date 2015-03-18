@@ -49,9 +49,12 @@ public class Circle {
         g2d.setColor(color);
         g2d.fillOval(x, y, radius, radius);
         
-        System.out.println(symbol.getType());
-        symbol.setSize(radius/3);
-        symbol.setPosition(radius - radius/3/2, radius - radius/3/2);
+        int size = radius/3;
+        int posX = x + radius/3;
+        int posY = y + radius/3;
+        
+        symbol.setSize(size);
+        symbol.setPosition(posX, posY);
         symbol.draw(g2d);
     }
 
