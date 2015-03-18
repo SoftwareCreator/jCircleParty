@@ -65,7 +65,7 @@ public class LoginView extends javax.swing.JFrame {
 
         pnFooter.setBackground(new java.awt.Color(41, 128, 185));
         pnFooter.setFocusable(false);
-        pnFooter.setLayout(new java.awt.GridLayout());
+        pnFooter.setLayout(new java.awt.GridLayout(1, 0));
 
         lbRegister.setForeground(new java.awt.Color(255, 255, 255));
         lbRegister.setText("Register");
@@ -134,7 +134,7 @@ public class LoginView extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         pnMain.add(lbUsernameIcon, gridBagConstraints);
 
-        tfUsername.setColumns(8);
+        tfUsername.setColumns(10);
         tfUsername.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
@@ -164,6 +164,8 @@ public class LoginView extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         pnMain.add(btLogin, gridBagConstraints);
+
+        tfPassword.setColumns(10);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
