@@ -8,6 +8,7 @@ import java.awt.Graphics2D;
  * jCircleParty
  *
  * @author Markus Petritz
+ * @author Jakob Meinhart
  * @version 1.0.0
  * @see http://petritzdesigns.at
  */
