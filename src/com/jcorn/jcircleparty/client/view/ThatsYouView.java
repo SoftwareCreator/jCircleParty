@@ -123,10 +123,13 @@ public class ThatsYouView extends javax.swing.JFrame {
         super.paint(grphcs);
         Graphics2D g2d = (Graphics2D) pnCircle.getGraphics();
         g2d.setBackground(new Color(238, 238, 238));
+        
+        //TODO: Change this
+        user.getCircle().setPosition(0, 0);
+        user.getCircle().setRadius(200);
+        
         user.getCircle().draw(g2d);
     }
-
-    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btOk;

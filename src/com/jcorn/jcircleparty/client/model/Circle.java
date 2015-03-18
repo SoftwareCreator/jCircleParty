@@ -14,7 +14,7 @@ import java.awt.Graphics2D;
 public class Circle {
 
     private int x, y, radius;
-    private Color color;
+    private final Color color;
 
     public Circle(int x, int y, int radius, Color color) {
         this.x = x;
@@ -26,6 +26,15 @@ public class Circle {
     public Circle() {
         this.radius = 200;
         this.color = Color.red;
+    }
+
+    public void setPosition(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public void setRadius(int radius) {
+        this.radius = radius;
     }
 
     public void draw(Graphics2D g2d) {
