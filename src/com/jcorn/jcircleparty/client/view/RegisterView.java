@@ -1,5 +1,7 @@
 package com.jcorn.jcircleparty.client.view;
 
+import com.jcorn.jcircleparty.client.model.Circle;
+import com.jcorn.jcircleparty.client.model.User;
 import com.jcorn.jcircleparty.helper.JC;
 import com.jcorn.jcircleparty.helper.Settings;
 import java.util.Arrays;
@@ -7,7 +9,7 @@ import javax.swing.JOptionPane;
 
 /**
  * jCircleParty
- * 
+ *
  * @author Markus Petritz
  * @author Julian Maierl
  * @author Jakob Meinhart
@@ -17,20 +19,20 @@ import javax.swing.JOptionPane;
 public class RegisterView extends javax.swing.JFrame {
 
     private final LoginView login;
-    
+
     public RegisterView(LoginView login) {
         initComponents();
         initLabels();
         this.login = login;
     }
-    
+
     private void initLabels() {
         setLocationRelativeTo(login);
-        
+
         lbTitle.setText(Settings.getTitle());
         lbCopyright.setText(Settings.getCopyright());
     }
-    
+
     private void back() {
         login.setVisible(true);
         this.dispose();
@@ -38,8 +40,7 @@ public class RegisterView extends javax.swing.JFrame {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
         pnTitle = new javax.swing.JPanel();
@@ -95,10 +96,8 @@ public class RegisterView extends javax.swing.JFrame {
         pnTitle.add(lbInfo, gridBagConstraints);
 
         btBack.setText("back");
-        btBack.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 onBack(evt);
             }
         });
@@ -204,10 +203,8 @@ public class RegisterView extends javax.swing.JFrame {
         pnMain.add(tfPasswordAgain, gridBagConstraints);
 
         btRegister.setText("Register");
-        btRegister.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 onRegister(evt);
             }
         });
@@ -228,23 +225,25 @@ public class RegisterView extends javax.swing.JFrame {
     }//GEN-LAST:event_onBack
 
     private void onRegister(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onRegister
-        try
-        {
+        try {
+            //TODO: check if tfName, tfEmail, tfUsername, tfPassword, tfPasswordAgain are not empty! (use trim() to get absolutly sure)
+            
             String password = Arrays.toString(tfPassword.getPassword());
             String passwordAgain = Arrays.toString(tfPasswordAgain.getPassword());
-            if(!password.equals(passwordAgain))
-            {
-                JOptionPane.showMessageDialog(this, "Please enter the second password correctly!");
-                tfPasswordAgain.setText("");
+            if (!password.equals(passwordAgain)) {
+                throw new Exception("Please enter the second password correctly!");
             }
             String name = tfName.getText();
-            String eMail = tfEmail.getText();
+            String email = tfEmail.getText();
             String username = tfUsername.getText();
-            //needs to be finished
-//            User user = new User(name, username, eMail, );
-        }
-        catch(Exception e)
-        {
+            
+            //User user = new User(name, email, username, new Circle());
+            //push to server
+            
+            login.setUsername(username);
+            
+        } catch (Exception e) {
+            tfPasswordAgain.setText("");
             JOptionPane.showMessageDialog(this, e.getMessage());
             JC.debug(e);
         }

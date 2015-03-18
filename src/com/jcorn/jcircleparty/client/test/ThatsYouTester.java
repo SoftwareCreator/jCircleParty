@@ -28,7 +28,7 @@ public class ThatsYouTester {
             @Override
             public void run() {
                 try {
-                    ThatsYouView view = new ThatsYouView(new User("Test Test", "test@mail.com", "test", new Circle(0, 0, 200, Color.blue)));
+                    ThatsYouView view = new ThatsYouView(new User("Test Test", "test@mail.com", "test", new Circle()));
                     view.setVisible(true);
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
