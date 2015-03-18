@@ -36,7 +36,8 @@ public class ThatsYouView extends javax.swing.JFrame {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
         java.awt.GridBagConstraints gridBagConstraints;
 
         pnTitle = new javax.swing.JPanel();
@@ -70,8 +71,10 @@ public class ThatsYouView extends javax.swing.JFrame {
         pnTitle.add(lbTitle, gridBagConstraints);
 
         btOk.setText("OK");
-        btOk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btOk.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 onOk(evt);
             }
         });
@@ -125,9 +128,12 @@ public class ThatsYouView extends javax.swing.JFrame {
         Graphics2D g2d = (Graphics2D) pnCircle.getGraphics();
         g2d.setBackground(new Color(238, 238, 238));
         
-        //TODO: Change this
-        user.getCircle().setPosition(0, 0);
-        user.getCircle().setRadius(200);
+        int pnWith = pnCircle.getWidth();
+        int border = 50;
+        int radius = pnWith / 2 - border;
+        
+        user.getCircle().setPosition(border, border);
+        user.getCircle().setRadius(radius * 2);
         
         user.getCircle().draw(g2d);
     }
