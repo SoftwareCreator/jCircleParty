@@ -25,10 +25,11 @@ public class Circle {
 
     public Circle() {
         this.radius = 200;
+        this.color = Color.red;
     }
 
     public void draw(Graphics2D g2d) {
-        g2d.setColor(Color.red);
+        g2d.setColor(color);
         g2d.fillOval(x, y, radius, radius);
     }
 }
