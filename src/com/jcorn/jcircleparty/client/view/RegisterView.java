@@ -226,8 +226,6 @@ public class RegisterView extends javax.swing.JFrame {
 
     private void onRegister(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onRegister
         try {
-            //TODO: check if tfName, tfEmail, tfUsername, tfPassword, tfPasswordAgain are not empty! (use trim() to get absolutly sure)
-            
             String password = Arrays.toString(tfPassword.getPassword());
             String passwordAgain = Arrays.toString(tfPasswordAgain.getPassword());
             if (!password.equals(passwordAgain)) {
@@ -236,6 +234,18 @@ public class RegisterView extends javax.swing.JFrame {
             String name = tfName.getText();
             String email = tfEmail.getText();
             String username = tfUsername.getText();
+            
+            if(!name.trim().equals("")) {
+                throw new Exception("Please enter a name!");
+            }
+            
+            if(!email.trim().equals("")) {
+                throw new Exception("Please enter an eMail!");
+            }
+            
+            if(!username.trim().equals("")) {
+                throw new Exception("Please enter an username!");
+            }
             
             //User user = new User(name, email, username, new Circle());
             //push to server
