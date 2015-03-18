@@ -50,6 +50,9 @@ public class Symbol {
             case SQUARE:
                 g2d.fillRect(x, y, size, size);
                 break;
+            case OVAL:
+                g2d.fillOval(x + 30 , y, size - 100, size);
+                break;
             case TRIANGLE:
                 break;
             case CIRCLE:
