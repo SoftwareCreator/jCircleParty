@@ -35,7 +35,7 @@ public class ClientMainView extends javax.swing.JFrame {
 
     private void showLogin() {
         //Quit Server Connection
-        //Syncronize with Server
+        //Synchronize with Server
 
         this.setVisible(false);
 

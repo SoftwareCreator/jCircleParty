@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 /**
  * jCircleParty
- * 
+ *
  * @author Markus Petritz
  * @author Julian Maierl
  * @version 1.0.0
@@ -46,7 +46,6 @@ public class User {
 //        if (!email.contains("@") || !email.contains(".")) {
 //            throw new Exception("The email is invalid");
 //        }
-        
         if (username.startsWith("@")) {
             throw new Exception("The username must not start with an @ sign");
         }

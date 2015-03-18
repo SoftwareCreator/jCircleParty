@@ -2,6 +2,7 @@ package com.jcorn.jcircleparty.client.view;
 
 import com.jcorn.jcircleparty.client.model.User;
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 /**
@@ -29,10 +30,7 @@ public class ThatsYouView extends javax.swing.JFrame {
     }
     
     private void draw() {
-        Graphics2D g2d = (Graphics2D) pnCircle.getGraphics();
-        g2d.setBackground(new Color(238, 238, 238));
-        //customize the parameters for this method! (x, y, size)
-        user.getCircle().draw(0, 0, 500, g2d);
+        paint(pnCircle.getGraphics());
     }
 
     @SuppressWarnings("unchecked")
@@ -120,6 +118,16 @@ public class ThatsYouView extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_onOk
 
+    @Override
+    public void paint(Graphics grphcs) {
+        super.paint(grphcs);
+        Graphics2D g2d = (Graphics2D) pnCircle.getGraphics();
+        g2d.setBackground(new Color(238, 238, 238));
+        user.getCircle().draw(g2d);
+    }
+
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btOk;
     private javax.swing.JLabel lbCopyright;
